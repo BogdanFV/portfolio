@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.profile-cover{
+  width: 70vw;
+  height: 85vh;
+  border-radius: 25px;
+  margin-right: 1vw;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: $light-color;
+  box-shadow: 1vw 1vw 0 $action-color;
+}

@@ -1,0 +1,23 @@
+@import '../../styles/colors.scss';
+
+.info-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 15vmin;
+
+    .link {
+        color: $secondary-color;
+        text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+            opacity: 0.8;
+        }
+    }
+    
+    .toast-message {
+    }
+}
