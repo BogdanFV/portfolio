@@ -1,23 +1,25 @@
 @import '../../styles/colors.scss';
 
 .info-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  height: 40vmin;
+  width: 40vmin;
+  margin: 0 100px;
+
+  & > div {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    border-bottom: 2px solid $secondary-color;
 
-    height: 15vmin;
-
-    .link {
-        color: $secondary-color;
-        text-decoration: underline;
-
-        &:hover{
-            cursor: pointer;
-            opacity: 0.8;
-        }
+    &:first-child {
+      border-top: 2px solid $secondary-color;
     }
-    
-    .toast-message {
-    }
+  }
 }

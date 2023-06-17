@@ -1,6 +1,7 @@
 @import '../src/styles/colors.scss';
 
 .App {
+  position: relative;
   text-align: center;
 
   .App-header {
@@ -13,4 +14,57 @@
     font-size: calc(10px + 2vmin);
   }
 
+  .background-gears {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    overflow: hidden;
+
+    .gear {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url('./assets/gear-icon.svg'); /* Replace with the actual image path */
+      background-size: cover;
+      opacity: 0.25;
+      animation: rotate 20s infinite linear;
+      filter: blur(1px); 
+    }
+
+    .gear-1 {
+      top: 30%;
+      left: 15%;
+      scale: 2.5;
+    }
+
+    .gear-2 {
+      bottom: 10%;
+      left: 40%;
+      scale: 1.8;
+    }
+
+    .gear-3 {
+      top: 30%;
+      right: 10%;
+      scale: 1.5;
+    }
+
+    .gear-4 {
+      top: 8%;
+      right: 40%;
+      scale: 1.5;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }

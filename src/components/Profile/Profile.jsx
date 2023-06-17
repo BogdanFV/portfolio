@@ -1,10 +1,14 @@
 import React from 'react';
 import './Profile.scss';
 
-const Profile = ({ children }) => {
+import AvatarMain from '../AvatarMain/AvatarMain';
+import InfoBlock from '../InfoBlock/InfoBlock';
+
+const Profile = () => {
   return (
-    <div className="profile-cover">
-      {children}
+    <div className="page-cover">
+      <AvatarMain />
+      <InfoBlock />
     </div>
   );
 };
