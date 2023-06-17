@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AvatarMain.scss';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AiFillGithub } from 'react-icons/ai';
+import { FaTelegram } from 'react-icons/fa';
 
 const avatar = require('./profile-pic.jpg');
 
@@ -20,7 +21,19 @@ const copyToClipboard = (text) => {
 const AvatarMain = () => {
   const [hearts, setHearts] = useState([]);
   const [heartsAmount, setHeartsAmount] = useState(0);
-  const [isClicked, setIsClicked] = useState(false); // New state for tracking the click
+  const [isClicked, setIsClicked] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (isClicked) {
+      timer = setTimeout(() => {
+        setIsClicked(false);
+      }, 3000);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isClicked]);
 
   const handleCopyLink = () => {
     const linkText = '@bgdnvkm';
@@ -44,7 +57,7 @@ const AvatarMain = () => {
 
   const handleImageClick = () => {
     setHeartsAmount((prevAmount) => prevAmount + 1);
-    setIsClicked(true); // Set isClicked to true on first click
+    setIsClicked(true);
   };
 
   return (
@@ -57,8 +70,20 @@ const AvatarMain = () => {
           ))}
           <p className={`amount ${isClicked ? '' : 'disabled'}`}>Счёт: {heartsAmount}</p>
         </div>
-        <div>Мой <a className='link' href='https://github.com/BogdanFV' target='_blank' rel='noopener noreferrer'>GitHub</a></div>
-        <div>Tg <span className='link' onClick={handleCopyLink}>@bgdnvkm</span></div>
+        <div className='link__block'>
+          <span>Мой</span>{' '}
+          <AiFillGithub className='link__img'/>
+          <a className='link' href='https://github.com/BogdanFV' target='_blank' rel='noopener noreferrer'>
+            github
+          </a>
+        </div>
+        <div className='link__block'>
+          <span>Tg</span>{' '}
+          <FaTelegram className='link__img'/>
+          <span className='link' onClick={handleCopyLink}>
+            @bgdnvkm
+          </span>
+        </div>
       </div>
 
       <ToastContainer
