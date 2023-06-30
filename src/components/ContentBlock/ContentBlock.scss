@@ -1,0 +1,41 @@
+@import '../../styles/colors.scss';
+
+.content-cover {
+    width: 50vw;
+
+    height: calc(80vh + 4px);
+
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.6s ease;
+
+    .test {
+        width: 50vw;
+        height: 80vh;
+        position: absolute;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border: 2px solid $secondary-color;
+        overflow: hidden;
+        background-color: white;
+
+        &.test-1 {
+            transform: translateZ(40vh);
+        }
+
+        &.test-2 {
+            background-color: white;
+            transform: rotateX(-90deg) translateZ(40vh);
+        }
+
+        &.test-3 {
+            transform: rotateX(-180deg) translateZ(40vh);
+        }
+
+        &.test-4 {
+            transform: rotateX(-270deg) translateZ(40vh);
+        }
+
+        
+    }
+}

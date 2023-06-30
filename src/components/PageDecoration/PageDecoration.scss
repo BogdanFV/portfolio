@@ -1,0 +1,47 @@
+@import '../../styles/colors.scss';
+
+.page-decoration {
+    position: absolute;
+    z-index: 5;
+
+    &.page-decoration-1 {
+      right: 3vmin;
+      top: 3vmin;
+      border-top: 2px solid $secondary-color;
+      border-right: 2px solid $secondary-color;
+      border-radius: 0 25px;
+
+      height: 10vw;
+      width: 10vw;
+    }
+
+    &.page-decoration-2 {
+      right: 3vmin;
+      bottom: 3vmin;
+      border-bottom: 2px solid $secondary-color;
+      border-right: 2px solid $secondary-color;
+      border-radius: 25px 0;
+      height: 10vw;
+      width: 10vw;
+    }
+
+    &.page-decoration-3 {
+      left: 3vmin;
+      top: 3vmin;
+      border-top: 2px solid $secondary-color;
+      border-left: 2px solid $secondary-color;
+      border-radius: 25px 0;
+      height: 5vw;
+      width: 5vw;
+    }
+
+    &.page-decoration-4 {
+      left: 3vmin;
+      bottom: 3vmin;
+      border-bottom: 2px solid $secondary-color;
+      border-left: 2px solid $secondary-color;
+      border-radius: 0 25px;
+      height: 5vw;
+      width: 5vw;
+    }
+  }

@@ -4,8 +4,9 @@
   position: relative;
   text-align: center;
 
-  .App-header {
-    background-color: $primary-color;
+  .App-main {
+    background: url(../src/assets/background-texture.png);
+
     min-height: 100vh;
     display: flex;
     flex-direction: column;

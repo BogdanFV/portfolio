@@ -1,25 +1,57 @@
 @import '../../styles/colors.scss';
 
-.info-cover {
+
+.info-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
-  height: 40vmin;
-  width: 40vmin;
-  margin: 0 100px;
+  justify-content: center;
+  height: 100%;
+  width: calc(100% - 10vmin);
+  transform: translateZ(250px);
+  position: absolute;
 
-  & > div {
+  margin: 0 5vmin;
+
+  span {
+    font-weight: 700;
+    color: $primary-color;
+  }
+  
+  .name-cover {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 100%;
-    border-bottom: 2px solid $secondary-color;
+    justify-content: space-around;
+    margin: 5vmin 10vmin;
 
-    &:first-child {
-      border-top: 2px solid $secondary-color;
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      width: 100%;
+      padding: 2vmin 0;
+      border-bottom: 2px solid $secondary-color;
+
+      &:first-child {
+        border-top: 2px solid $secondary-color;
+      }
+    }
+  }
+  .info-skills__headline {
+    margin-top: 1vmin;
+    margin-bottom: 2vmin;
+    font-weight: 700;
+  }
+  .info-skills__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    .info-text {
+      margin-bottom: 15px;
+      font-size: calc(8px + 2vmin);
     }
   }
 }

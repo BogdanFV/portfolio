@@ -1,63 +1,23 @@
 @import '../../styles/colors.scss';
 
-.page-cover {
-  width: 70vw;
-  height: 85vh;
-  border-radius: 25px;
-  margin-right: 1vw;
-  border: 2px solid $secondary-color;
-
+.test-cover {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  position: relative;
+  .page-cover {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 2px solid $secondary-color;
 
-  background-color: $light-color;
-  box-shadow: 1.5vw 1.5vw 10px rgba(255, 36, 0, 0.5);
-  z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    height: 80vh;
 
-  .page-decoration {
-    position: absolute;
+    overflow: hidden;
+    background-color: $light-color;
+    box-shadow: 1.5vw 0 10px rgba(0, 0, 0, .3);
+    z-index: 10;
 
-    &.page-decoration-1 {
-      right: 3vmin;
-      top: 3vmin;
-      border-top: 2px solid $secondary-color;
-      border-right: 2px solid $secondary-color;
-      border-radius: 0 25px;
-
-      height: 10vw;
-      width: 10vw;
-    }
-
-    &.page-decoration-2 {
-      right: 3vmin;
-      bottom: 3vmin;
-      border-bottom: 2px solid $secondary-color;
-      border-right: 2px solid $secondary-color;
-      border-radius: 25px 0;
-      height: 10vw;
-      width: 10vw;
-    }
-
-    &.page-decoration-3 {
-      left: 3vmin;
-      top: 3vmin;
-      border-top: 2px solid $secondary-color;
-      border-left: 2px solid $secondary-color;
-      border-radius: 25px 0;
-      height: 5vw;
-      width: 5vw;
-    }
-
-    &.page-decoration-4 {
-      left: 3vmin;
-      bottom: 3vmin;
-      border-bottom: 2px solid $secondary-color;
-      border-left: 2px solid $secondary-color;
-      border-radius: 0 25px;
-      height: 5vw;
-      width: 5vw;
-    }
   }
 }

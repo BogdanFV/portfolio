@@ -80,9 +80,9 @@ const AvatarMain = () => {
         <div className='link__block'>
           <span>Tg</span>{' '}
           <FaTelegram className='link__img'/>
-          <span className='link' onClick={handleCopyLink}>
+          <a className='link'href="tg://resolve?domain=@bgdnvkm" onClick={handleCopyLink}>
             @bgdnvkm
-          </span>
+          </a>
         </div>
       </div>
 
