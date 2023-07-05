@@ -33,7 +33,7 @@ const InfoBlock = () => {
 
         <p className='info-text'><span>Фреймворки:</span> React, React Native, Vue 2, Vue 3</p>
         <p className='info-text'><span>Препроцессоры:</span> Sass, Less</p>
-        <p className='info-text'><span>Инструменты сборки:</span> Webpack</p>
+        <p className='info-text'><span>Инструменты сборки:</span> Webpack, Esbuild</p>
       </div>
     </div>
   );

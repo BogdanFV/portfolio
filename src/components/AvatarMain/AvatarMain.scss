@@ -9,9 +9,9 @@
 }
 
 .App-avatar {
-    height: 40vmin;
-    width: 40vmin;
-    margin: 3vmin 3vmin 3vmin 6vmin;
+    height: 250px;
+    width: 250px;
+    margin: 20px 20px 20px 40px;
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(255, 36, 0, 0.5);
     background-color: $secondary-color;
@@ -83,8 +83,8 @@
 
 .heart {
     position: absolute;
-    width: 5vmin;
-    height: 5vmin;
+    width: 25px;
+    height: 25px;
     background-image: url(../../assets/heart.svg);
     background-size: contain;
     animation: flyaway 2s ease-out;

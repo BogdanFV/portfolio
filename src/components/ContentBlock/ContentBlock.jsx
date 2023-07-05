@@ -3,14 +3,12 @@ import './ContentBlock.scss';
 import InfoBlock from '../InfoBlock/InfoBlock';
 import PageRightDecoration from '../PageDecoration/PageRightDecoration';
 
-
 const ContentBlock = () => {
-
-    const [scrollIndex, setScrollIndex] = useState(0);
+    const [, setScrollIndex] = useState(0);
     const secondaryCoverRef = useRef(null);
-    const cube = secondaryCoverRef.current;
-    let currentSide = 1;
-    let isScrolling = false;
+    const cube = useRef(null);
+    const currentSide = useRef(1);
+    const isScrolling = useRef(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,27 +18,26 @@ const ContentBlock = () => {
         };
 
         const handleWheel = (event) => {
-            if (!isScrolling) {
-                isScrolling = true;
+            if (!isScrolling.current) {
+                isScrolling.current = true;
 
                 const delta = event.deltaY;
                 let rotateX = 0;
 
-                currentSide += delta > 0 ? 1 : -1;
-                if (currentSide > 4) currentSide = 1;
-                if (currentSide < 1) currentSide = 4;
-                console.log(currentSide);
+                currentSide.current += delta > 0 ? 1 : -1;
+                if (currentSide.current > 4) currentSide.current = 1;
+                if (currentSide.current < 1) currentSide.current = 4;
 
-                const cube = secondaryCoverRef.current;
+                const cubeElement = secondaryCoverRef.current;
 
                 switch (true) {
-                    case currentSide === 2:
+                    case currentSide.current === 2:
                         rotateX = 90;
                         break;
-                    case currentSide === 3:
+                    case currentSide.current === 3:
                         rotateX = 180;
                         break;
-                    case currentSide === 4:
+                    case currentSide.current === 4:
                         rotateX = 270;
                         break;
                     default:
@@ -48,24 +45,24 @@ const ContentBlock = () => {
                         break;
                 }
 
-                if (cube) {
-                    cube.style.transform = `rotateX(${rotateX}deg)`;
+                if (cubeElement) {
+                    cubeElement.style.transform = `rotateX(${rotateX}deg)`;
                 }
 
                 setTimeout(() => {
-                    isScrolling = false;
+                    isScrolling.current = false;
                 }, 1600);
             }
         };
 
         const container = secondaryCoverRef.current;
+        cube.current = container;
         container.addEventListener('scroll', handleScroll);
         window.addEventListener('wheel', handleWheel);
-        console.log(window.innerHeight);
 
         return () => {
-          container.removeEventListener('scroll', handleScroll);
-          window.removeEventListener('wheel', handleWheel);
+            container.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('wheel', handleWheel);
         };
     }, []);
 
