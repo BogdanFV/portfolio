@@ -9,7 +9,7 @@
     transform-style: preserve-3d;
     transition: transform 1.6s ease;
 
-    .test {
+    .side {
         width: 50vw;
         height: 80vh;
         position: absolute;
@@ -19,20 +19,19 @@
         overflow: hidden;
         background-color: white;
 
-        &.test-1 {
+        &.front {
             transform: translateZ(40vh);
         }
 
-        &.test-2 {
-            background-color: white;
+        &.bottom {
             transform: rotateX(-90deg) translateZ(40vh);
         }
 
-        &.test-3 {
+        &.back {
             transform: rotateX(-180deg) translateZ(40vh);
         }
 
-        &.test-4 {
+        &.top {
             transform: rotateX(-270deg) translateZ(40vh);
         }
 

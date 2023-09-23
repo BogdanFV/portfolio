@@ -68,19 +68,19 @@ const ContentBlock = () => {
 
     return (
         <div className='content-cover' ref={secondaryCoverRef}>
-            <section className='test test-1'>
+            <section className='side front'>
                 <PageRightDecoration />
                 <InfoBlock />
             </section>
-            <section className='test test-2'>
+            <section className='side bottom'>
                 <PageRightDecoration />
                 second
             </section>
-            <section className='test test-3'>
+            <section className='side back'>
                 <PageRightDecoration />
                 third
             </section>
-            <section className='test test-4'>
+            <section className='side top'>
                 <PageRightDecoration />
                 fourth
             </section>
